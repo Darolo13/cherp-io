@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/JHallUofA/b2b-inventory.git"
   },
-  "author": "James Hall, David Romero, Matt Gaunt, Curan Thompson",
+  "author": "Zachary Samson, David Romero, James Hall",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/JHallUofA/b2b-inventory/issues"
