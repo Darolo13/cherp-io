@@ -1,13 +1,10 @@
 <section>
-  <div class='container'>
-    <h2
-      class='row display-4'
-      style='color: #ffc300; text-shadow: 2px 2px 8px black;'
-    >
+  <div>
+    <h2>
       {{customer_data.customer_name}}'s Orders</h2>
-    <div class='row'>
+    <div>
       {{#each customer_data.orders as |order|}}
-        <div class='col-sm'>
+        <div>
           <h3>Order ID: {{order.id}}</h3>
           <h4>Due Date: {{order.due_date}}</h4>
           <table class='table table-hover table-dark'>
@@ -31,12 +28,12 @@
       <form class='delete-order-form'>
         <div class='form-group'>
           <label for='order'>Choose an order</label>
-          <select name='order' id='order' class='form-control'>
+          <select name='order' id='order'>
             {{#each customer_data.orders}}
               <option value='{{this.id}}'>{{this.id}}</option>
             {{/each}}
           </select>
-          <button type='button' class='btn btn-danger delete'>Delete order</button>
+          <button type='button'>Delete order</button>
         </div>
 
       </form>

@@ -1,12 +1,12 @@
-<div class='container'>
-  <div class='row'>
-    <div class='col-sm'>
+<div>
+  <div>
+    <div>
       <h2> Edit inventory </h2>
       <div class='card' style='width: 18rem;'>
         <form class='edit-inventory-form'>
           <div class='form-group'>
             <label for='product' class='form-label'>Choose an inventory product</label>
-            <select name='product' id='product' class='form-control'>
+            <select name='product' id='product'>
               {{#each product_list}}
                 <option value='{{this.id}}'>{{this.product_name}}</option>
               {{/each}}
@@ -18,13 +18,13 @@
             <input type='number' id='qty' name='qty' min='1' max='25000' />
           </div>
 
-          <button type='submit' class='btn btn-success'>Update product</button>
-          <button type='button' class='btn btn-danger delete'>Delete product</button>
+          <button type='submit'>Update product</button>
+          <button type='button'>Delete product</button>
         </form>
       </div>
     </div>
 
-    <div class='col-sm'>
+    <div>
       <h2>Seed Data</h2>
       <!-- wrap the entire dropzone in a form to submit files SOMEWHERE-->
       <!-- the ROUTE we will send this file through is "/upload" -->
