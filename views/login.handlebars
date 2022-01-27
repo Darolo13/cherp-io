@@ -1,47 +1,63 @@
-<div class='container'>
+<section class='forms-section'>
+  <h1 class='section-title'>Cherp</h1>
+  <div class='forms'>
+    <div class='form-wrapper is-active'>
+      {{! switcher }}
+      <button type='button' class='switcher switcher-login'>
+        Login
+        <span class='underline'></span>
+      </button>
+      {{! login }}
+      <form action='' class='form login-form'>
+        <fieldset>
+          <legend>
+            Please, enter your email and password for login.
+          </legend>
+        {{! login email }}
+        <div class='email input-block'>
+          <label for='email-login'>email:</label>
+          <input type='email' id='email-login' required />
+        </div>
+        {{! login password }}
+        <div class='password input-block'>
+          <label for='password-login'>password:</label>
+          <input type='password' id='password-login' minlength='4' required />
+        </div>
+        <div>
+        </fieldset>
+          <button type='submit' class='submit-button btn-login'>login</button>
+      </form>
+        </div>
 
-  <form action='' class='login-form'>
-    <div>
-      <label for='email-login'>email:</label>
-      <input type='email' id='email-login' required />
+    {{! Signup }}
+    <div class="form-wrapper">
+      {{!-- switcher --}}
+      <button type="button" class="switcher switcher-signup">
+        Sign Up
+        <span class="underline"></span>
+      </button>
+      {{!-- form --}}
+    <form class='signup-form'>
+      <div>
+        <label for='username-signup'>username:</label>
+        <input type='text' id='username-signup' required />
+      </div>
+      <div>
+        <label for='email-signup'>email:</label>
+        <input type='email' id='email-signup' required />
+      </div>
+      <div>
+        <label for='password-signup'>password:</label>
+        <input type='password' id='password-signup' minlength='4' required />
+      </div>
+      <div>
+        <button type='submit' class='submit-button'>signup</button>
+      </div>
+    </form>
+  </div>
     </div>
-    <div>
-      <label for='password-login'>password:</label>
-      <input
-        type='password'
-        id='password-login'
-        minlength='4'
-        required
-      />
-    </div>
-    <div>
-      <button type='submit' class='submit-button'>login</button>
-    </div>
-  </form>
-
-  <form class='signup-form'>
-    <div>
-      <label for='username-signup'>username:</label>
-      <input type='text' id='username-signup' required />
-    </div>
-    <div>
-      <label for='email-signup'>email:</label>
-      <input type='email' id='email-signup' required />
-    </div>
-    <div>
-      <label for='password-signup'>password:</label>
-      <input
-        type='password'
-        id='password-signup'
-        minlength='4'
-        required
-      />
-    </div>
-    <div>
-      <button type='submit' class='submit-button'>signup</button>
-    </div>
-  </form>
-</div>
+</section>
 
 <script src='/javascript/login.js'></script>
 <script src='/javascript/signup.js'></script>
+<script src='/javascript/switcher.js'></script>
