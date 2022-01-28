@@ -1,102 +1,90 @@
-<div>
-  <div>
-    {{! SELECT existing customer }}
-    <div>
-      <section>
-        <h2>My Customers</h2>
-        <form class='new-cust-form'>
-          <div>
-            <label for='cust_name'>Customer Name</label>
-            <input type='text' id='cust_name' name='cust_name' required />
-          </div>
-          <button type='submit'>Create new customer</button>
-        </form>
-      </section>
-      {{#if custList.length}}
-        <section>
-          <ul class='post-list list-group'>
-            {{#each custList as |customer|}}
-              <li class='list-group-item list-group-item-dark'>
-                <a
-                  href='/dashboard/custDetail/{{customer.id}}'
-                  class='get-customer'
-                >{{customer.customer_name}}</a>
-              </li>
-            {{/each}}
-          </ul>
-        </section>
-      {{/if}}
-    </div>
-    {{! EDIT data }}
-    <div>
-      <section>
-        <h2 class='display-4'>Manage data</h2>
-        <a href='/dashboard/createOrder'><button
-            class='create-order'
-            id='manage'
-          >Create new order</button></a>
-        <a id='report' class='report' id='manage'>Inventory Report</a>
-      </section>
-      <section id='rep-table'>
+{{! SELECT existing customer }}
 
-      </section>
-    </div>
-    {{! Inventory table }}
+<section class='inventory__customer'>
+  <h2>My Customers</h2>
+  <form class='new-cust-form'>
     <div>
-      <section>
-        <h2>Manage inventory</h2>
-        <form class='new-inv-form'>
+      <label for='cust_name'>Customer Name</label>
+      <input type='text' id='cust_name' name='cust_name' required />
+    </div>
+    <button type='submit'>Create new customer</button>
+  </form>
+</section>
+{{#if custList.length}}
+  <section>
+    <ul class='post-list list-group'>
+      {{#each custList as |customer|}}
+        <li class='list-group-item list-group-item-dark'>
           <a
-            href='/dashboard/editInventory'
-            class='edit-inv small'
-            id='manage'
-          >Edit Inventory</a>
-          <div>
-            <label for='prod-name'>Add product</label>
-            <input
-              type='text'
-              id='prod-name'
-              name='prod-name'
-              class='input'
-              required
-            />
-          </div>
-          <div>
-            <label for='prod-qty'>Add qty</label>
-            <input
-              type='number'
-              min='1'
-              max='25000'
-              id='prod-qty'
-              name='prod-qty'
-              class='input'
-              required
-            />
-          </div>
-          <button type='submit'>Add product</button>
-        </form>
-      </section>
-      <section>
-        <table class='table table-success table-striped'>
-          <thead>
-            <th>Product</th>
-            <th>Quantity</th>
-          </thead>
+            href='/dashboard/custDetail/{{customer.id}}'
+            class='get-customer'
+          >{{customer.customer_name}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  </section>
+{{/if}}
 
-          <tbody>
-            {{#each productList as |product|}}
-              <tr>
-                <td>{{product.product_name}}</td>
-                <td>{{product.quantity}}</td>
-              </tr>
-            {{/each}}
-          </tbody>
-        </table>
-      </section>
+{{! EDIT data }}
+<section>
+  <h2>Manage data</h2>
+  <a href='/dashboard/createOrder'><button
+      class='create-order'
+      id='manage'
+    >Create new order</button></a>
+  <a id='report' class='report' id='manage'>Inventory Report</a>
+</section>
+<section id='rep-table'></section>
+
+{{! Inventory table }}
+
+<section>
+  <h2>Manage inventory</h2>
+  <form class='new-inv-form'>
+    <a href='/dashboard/editInventory' class='edit-inv small' id='manage'>Edit
+      Inventory</a>
+    <div>
+      <label for='prod-name'>Add product</label>
+      <input
+        type='text'
+        id='prod-name'
+        name='prod-name'
+        class='input'
+        required
+      />
     </div>
+    <div>
+      <label for='prod-qty'>Add qty</label>
+      <input
+        type='number'
+        min='1'
+        max='25000'
+        id='prod-qty'
+        name='prod-qty'
+        class='input'
+        required
+      />
+    </div>
+    <button type='submit'>Add product</button>
+  </form>
+</section>
+<section>
+  <table class='table table-success table-striped'>
+    <thead>
+      <th>Product</th>
+      <th>Quantity</th>
+    </thead>
 
-  </div>
-</div>
+    <tbody>
+      {{#each productList as |product|}}
+        <tr>
+          <td>{{product.product_name}}</td>
+          <td>{{product.quantity}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</section>
 
 <script src='/javascript/generate-report.js'></script>
 <script src='/javascript/create-customer.js'></script>
