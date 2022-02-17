@@ -315,6 +315,55 @@ nav > a {
 
 /* Dashboard Section */
 
-.inventory__customer {
+.dashboard__customer {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding: 10px;
+  border: 2px solid #3b4465;
+}
+
+.dashboard__customer > h2 {
+  display: flex;
+  justify-content: start;
+}
+
+.dashboard__report {
+  display: flex;
+}
+
+.dashboard__manage-data {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 2px solid #3b4465;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.dashboard__split {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 1;
+}
+
+.dashboard__manage-inventory {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border: 2px solid #3b4465;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.dashboard__table {
+  display: flex;
+  margin-left: 10px;
 }
